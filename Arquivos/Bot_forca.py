@@ -1,11 +1,10 @@
 palavras = ['PAPEL', 'OMELGLE', 'NADA', 'SUJEIRA', 'GOVERNO', 'COMPUTADOR', 'PAISAGEM']
 
 chances = 5
-
 escolhida = [c for c in palavras[-2]]
 censura = ['_'] * len(escolhida)
 
-print(escolhida, censura)
+print('Olá, sou o bot da forca, vamos jogar?\nEscreva uma letra ou uma palavra desejada, mas tenha cuidado! Suas chances diminuem a cada erro!\nBOA SORTE!')
 
 while True: 
 
@@ -16,7 +15,7 @@ while True:
     print('Forca:', ' '.join(censura), f'| {chances} Chances (Sem dica!)')
 
     if '_' not in censura:
-        print('Favela venceu :)')
+        print('Parabens vocẽ acertou :D')
         break
 
     resp = input(str('Digite uma letra: ')).upper()
@@ -27,11 +26,12 @@ while True:
             if resp == escolhida[c]:
                 censura[c] = resp
 
-    elif resp == ''.join(escolhida):
+    elif resp == ''.join(escolhida) or '_' not in censura:
         print(f'Parabens vocẽ acertou :D')
         break
 
     else:
         chances -= 1
 
-    
+print('Se vocẽ quiser incentivar/ajudar meu desenvolvedor o pix dele é: e0b2c13a-8b11-4871-9a93-cda231725a1e')
+print('OBRIGADO POR JOGAR :D')

@@ -2,29 +2,36 @@ from random import randrange
 
 def forca(escolhida, censura, chances, resp):
 
-    if chances == 0: print(f'Vocẽ perdeu :(\nA palavra era: {"".join(escolhida)}'); return False, chances
+    if chances == 0:
+        print(f'Vocẽ perdeu :(\nA palavra era: {"".join(escolhida)}')
+        return False, chances
 
     if resp in escolhida and len(resp) == 1:
 
-        for c in range(len(escolhida)): 
-            if resp == escolhida[c]: censura[c] = resp
+        for c in range(len(escolhida)):
+            if resp == escolhida[c]:
+                censura[c] = resp
         if '_' not in censura:
 
-            print(f'Forca: {" ".join(censura)} | {chances} Chances (Sem dica!)')
+            print(
+                f'Forca: {" ".join(censura)} | {chances} Chances (Sem dica!)')
             print(f'Parabens vocẽ acertou :D')
             return False, chances
 
-        else: 
+        else:
             return True, chances
 
-    if resp == ''.join(escolhida) or '_' not in censura: print(f'Parabens vocẽ acertou :D'); return False, chances
+    if resp == ''.join(escolhida) or '_' not in censura:
+        print(f'Parabens vocẽ acertou :D')
+        return False, chances
 
-    else: 
-        chances -= 1 
+    else:
+        chances -= 1
         return True, chances
 
 
-palavras, chances, continuar = ['PAPEL', 'OMEGLE', 'NADA', 'SUJEIRA', 'GOVERNO', 'COMPUTADOR', 'PAISAGEM'], 5, True
+palavras, chances, continuar = ['Árvore', 'Girassol', 'Balanço', 'Computador', 'Caminhão', 'Elefante', 'Livro', 'Girafa', 'Refrigerador', 'Bolsa', 'Cachorro', 'Gato', 'Avião', 'Bicicleta',
+                                'Casa', 'Banheiro', 'Cozinha', 'Jardim', 'Carro', 'Chave'], 5, True
 
 escolhida = [c for c in palavras[randrange(len(palavras))]]
 censura = ['_'] * len(escolhida)

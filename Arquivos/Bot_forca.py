@@ -33,7 +33,7 @@ def forca(escolhida, censura, chances, resp):
 palavras, chances, continuar = ['Árvore', 'Girassol', 'Balanço', 'Computador', 'Caminhão', 'Elefante', 'Livro', 'Girafa', 'Refrigerador', 'Bolsa', 'Cachorro', 'Gato', 'Avião', 'Bicicleta',
                                 'Casa', 'Banheiro', 'Cozinha', 'Jardim', 'Carro', 'Chave'], 5, True
 
-escolhida = [c for c in palavras[randrange(len(palavras))]]
+escolhida = [c.upper() for c in palavras[randrange(len(palavras))]]
 censura = ['_'] * len(escolhida)
 
 print('Olá, sou o bot da forca, vamos jogar?\nEscreva uma letra ou uma palavra desejada, mas tenha cuidado! Suas chances diminuem a cada erro!\nBOA SORTE!')
